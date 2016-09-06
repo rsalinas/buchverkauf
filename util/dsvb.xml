@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project DsvBuecherv2">
+
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="../pkg/dsvbwin.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Main-Class" value="dsv.buecher.DsvBuecher"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="../bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="../lib/itext.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="../lib/sqlite-jdbc-3.6.20.jar"/>
+	    <zipfileset excludes="META-INF/*.SF" src="../other/swt-win32.jar"/>
+        </jar>
+    </target>
+</project>
